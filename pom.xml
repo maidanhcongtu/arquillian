@@ -64,7 +64,22 @@
 		    <version>1.0.0.Alpha7</version>
 		    <scope>test</scope>
 		</dependency>
-
+		
+			<!-- DEPLOY ONE DEPLOYMENT -->
+			
+			<dependency>
+				<groupId>org.eu.ingwar.tools</groupId>
+				<artifactId>arquillian-suite-extension</artifactId>
+				<version>1.1.4</version>
+				<scope>test</scope>
+			</dependency>
+	
+			<dependency>
+				<groupId>org.jboss.arquillian.protocol</groupId>
+				<artifactId>arquillian-protocol-servlet</artifactId>
+				<scope>test</scope>
+			</dependency>
+		
 		<!-- END ARQUILLIAN -->
 		
 		<dependency>

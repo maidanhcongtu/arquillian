@@ -76,10 +76,6 @@ public class StudentResourceIT {
 		
 		List<StudentEntity> students = getAsListOf(StudentEntity[].class, builder);
 		Assert.assertThat(students.size(), Matchers.is(3));
-		System.out.println("students size " + students.size());
-		for (StudentEntity studentEntity : students) {
-			//System.out.println(studentEntity.getId() + " " + studentEntity.getName() + " " + studentEntity.getClassStudentEntity().getName());
-		}
 	}
 	
 	@Test
@@ -93,12 +89,10 @@ public class StudentResourceIT {
 		StudentEntity studentEntity = students.get(0);
 		Assert.assertThat(studentEntity.getId(), Matchers.is(2l));
 		Assert.assertThat(studentEntity.getName(), Matchers.is("mai danh 2"));
-//		Assert.assertThat(studentEntity.getClassStudentEntity().getName(), Matchers.is("HCM class"));
 
 		StudentEntity studentEntity2 = students.get(1);
 		Assert.assertThat(studentEntity2.getId(), Matchers.is(3l));
 		Assert.assertThat(studentEntity2.getName(), Matchers.is("mai danh 3"));
-//		Assert.assertThat(studentEntity2.getClassStudentEntity().getName(), Matchers.is("Da Nang class"));
 		
 	}
 	
@@ -116,12 +110,10 @@ public class StudentResourceIT {
 		StudentEntity studentEntity = students.get(0);
 		Assert.assertThat(studentEntity.getId(), Matchers.is(2l));
 		Assert.assertThat(studentEntity.getName(), Matchers.is("mai danh 2"));
-//		Assert.assertThat(studentEntity.getClassStudentEntity().getName(), Matchers.is("HCM class"));
 
 		StudentEntity studentEntity2 = students.get(1);
 		Assert.assertThat(studentEntity2.getId(), Matchers.is(3l));
 		Assert.assertThat(studentEntity2.getName(), Matchers.is("mai danh 3"));
-//		Assert.assertThat(studentEntity2.getClassStudentEntity().getName(), Matchers.is("Da Nang class"));
 	}
 	private StudentEntity saveStudent() {
 		StudentEntity studentEntity = new StudentEntity();
@@ -155,8 +147,6 @@ public class StudentResourceIT {
 	
 	public <T> List<T> getAsListOf(Class<T[]> clazz, Builder builder) {
 		String jsonString = builder.get(String.class);
-		System.out.println("json string");
-		System.out.println(jsonString);
 		T[] jsonToObject = createGson().fromJson(jsonString, clazz);
 
 		return Arrays.asList(jsonToObject);

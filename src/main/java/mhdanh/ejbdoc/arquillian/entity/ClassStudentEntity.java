@@ -15,9 +15,6 @@ public class ClassStudentEntity {
 	private long id;
 
 	private String name;
-	
-	public ClassStudentEntity() {
-	}
 
 	public long getId() {
 		return id;

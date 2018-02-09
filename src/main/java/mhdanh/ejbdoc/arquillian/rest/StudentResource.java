@@ -6,7 +6,6 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Response;
 
 import mhdanh.ejbdoc.arquillian.entity.StudentEntity;
 import mhdanh.ejbdoc.arquillian.service.StudentService;
@@ -18,15 +17,13 @@ public class StudentResource {
 	private StudentService studentService;
 	
 	@GET
-	public Response getAllStudent() {
-		List<StudentEntity> students = studentService.getAll();
-		return Response.ok().entity(students).build();
+	public List<StudentEntity> getAllStudent() {
+		return studentService.getAll();
 	}
 	
 	@POST
-	public Response saveStudent(StudentEntity studentEntity) {
-		StudentEntity student = studentService.addStudent(studentEntity);
-		return Response.ok().entity(student).build();
+	public StudentEntity saveStudent(StudentEntity studentEntity) {
+		return studentService.addStudent(studentEntity);
 	}
 	
 }
